@@ -8,16 +8,23 @@ const http = require('http');
 const { Server } = require('socket.io');
 
 const server = http.createServer(app);
-const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  'http://localhost:5173',
-  'http://localhost:3000'
-].filter(Boolean);
+const corsOriginDelegate = (origin, callback) => {
+  if (!origin) return callback(null, true);
+  if (
+    origin.endsWith('.vercel.app') ||
+    origin.startsWith('http://localhost') ||
+    (process.env.FRONTEND_URL && origin.replace(/\/$/, '') === process.env.FRONTEND_URL.replace(/\/$/, ''))
+  ) {
+    return callback(null, true);
+  }
+  callback(null, true);
+};
 
 const io = new Server(server, {
   cors: {
-    origin: allowedOrigins.length > 0 ? allowedOrigins : "*",
-    methods: ["GET", "POST"]
+    origin: corsOriginDelegate,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true
   }
 });
 
@@ -34,7 +41,8 @@ const PORT = process.env.PORT || 8080;
 
 // Middlewares
 app.use(cors({
-  origin: allowedOrigins.length > 0 ? allowedOrigins : "*"
+  origin: corsOriginDelegate,
+  credentials: true
 }));
 app.use(express.json());
 
