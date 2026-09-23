@@ -1,6 +1,7 @@
 import React, { useState, useEffect, } from 'react';
 import './App.css';
 import { io } from 'socket.io-client';
+import { Analytics } from '@vercel/analytics/react';
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || (window.location.hostname === 'localhost' ? 'http://localhost:8080' : 'https://zippy-backend-vc4w.onrender.com');
 const API_URL = `${BACKEND_URL}/api`;
 const socket = io(BACKEND_URL);
@@ -515,6 +516,7 @@ export default function App() {
         </div>
       )}
       {/* 👆👆 ======================================== 👆👆 */}
+      <Analytics />
     </div>
   );
 }
