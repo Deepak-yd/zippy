@@ -69,6 +69,13 @@ const adminRoutes = require('./routes/admin');
 app.use('/api/admin', adminRoutes);
 // ========================================
 
+// Initialize Neon PostgreSQL Database & Seed Sample Products
+try {
+  require('./init_neon');
+} catch (e) {
+  console.log('Neon init skipped:', e.message);
+}
+
 // ==========================================
 // 1. MONGODB DATABASE CONNECTION
 // ==========================================
