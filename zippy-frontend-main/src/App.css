@@ -1,0 +1,240 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* =========================================================
+   ZIPPY ULTRA LIQUID GLASSMORPHISM DESIGN SYSTEM
+   ========================================================= */
+
+/* 1. DYNAMIC FLUID LIQUID ANIMATIONS */
+@keyframes liquidBlob {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    transform: translate(45px, -60px) scale(1.12) rotate(15deg);
+    border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%;
+  }
+  50% {
+    transform: translate(-35px, 40px) scale(0.92) rotate(-10deg);
+    border-radius: 70% 30% 50% 50% / 30% 50% 50% 70%;
+  }
+  75% {
+    transform: translate(35px, 45px) scale(1.08) rotate(8deg);
+    border-radius: 30% 70% 40% 60% / 60% 40% 60% 40%;
+  }
+}
+
+@keyframes liquidFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-liquid-blob-1 {
+  animation: liquidBlob 18s ease-in-out infinite;
+}
+
+.animate-liquid-blob-2 {
+  animation: liquidBlob 24s ease-in-out infinite reverse;
+}
+
+.animate-liquid-blob-3 {
+  animation: liquidBlob 16s ease-in-out infinite 2s;
+}
+
+.animate-liquid-flow {
+  background-size: 200% 200%;
+  animation: liquidFlow 10s ease infinite;
+}
+
+/* 2. LIQUID GLASSMORPHISM SURFACES & CONTAINERS */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(28px) saturate(210%);
+  -webkit-backdrop-filter: blur(28px) saturate(210%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 20px 50px -15px rgba(37, 99, 235, 0.12),
+    0 10px 25px -10px rgba(0, 0, 0, 0.05),
+    inset 0 2px 3px rgba(255, 255, 255, 0.95),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.liquid-glass-header {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.45) 100%);
+  backdrop-filter: blur(32px) saturate(220%);
+  -webkit-backdrop-filter: blur(32px) saturate(220%);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 12px 35px rgba(37, 99, 235, 0.08),
+    inset 0 1.5px 2px rgba(255, 255, 255, 1);
+}
+
+.liquid-glass-hero {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.88) 0%, rgba(79, 70, 229, 0.82) 45%, rgba(147, 51, 234, 0.85) 100%);
+  backdrop-filter: blur(35px) saturate(240%);
+  -webkit-backdrop-filter: blur(35px) saturate(240%);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 
+    0 25px 65px -12px rgba(37, 99, 235, 0.45),
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    inset 0 2.5px 4px rgba(255, 255, 255, 0.75),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.liquid-glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.45) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1.5px solid rgba(255, 255, 255, 0.88);
+  box-shadow: 
+    0 18px 40px -10px rgba(37, 99, 235, 0.12),
+    0 4px 15px rgba(0, 0, 0, 0.04),
+    inset 0 2px 2px rgba(255, 255, 255, 0.98),
+    inset 0 -1.5px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.liquid-glass-card:hover {
+  transform: translateY(-8px) scale(1.025);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 28px 60px -12px rgba(37, 99, 235, 0.28),
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    inset 0 3px 4px rgba(255, 255, 255, 1);
+}
+
+.liquid-glass-button {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 10px 25px -4px rgba(37, 99, 235, 0.5),
+    inset 0 2px 2px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.liquid-glass-button:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 
+    0 16px 32px -4px rgba(37, 99, 235, 0.65),
+    inset 0 3px 3px rgba(255, 255, 255, 0.85);
+}
+
+.liquid-glass-button:active {
+  transform: translateY(1px) scale(0.96);
+  box-shadow: 
+    inset 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.liquid-glass-pill {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(18px) saturate(190%);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.05),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.95);
+}
+
+.liquid-glass-banner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.15) 100%);
+  backdrop-filter: blur(24px) saturate(210%);
+  -webkit-backdrop-filter: blur(24px) saturate(210%);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 18px 40px rgba(0, 0, 0, 0.22),
+    inset 0 2px 3px rgba(255, 255, 255, 0.65);
+}
+
+/* 3. GLOSSY SWEEP & POP ANIMATIONS */
+@keyframes glossSweep {
+  0% {
+    transform: translateX(-150%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(250%) rotate(25deg);
+  }
+}
+
+.gloss-sweep-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.gloss-sweep-overlay::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  transform: translateX(-150%) rotate(25deg);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.gloss-sweep-overlay:hover::before {
+  animation: glossSweep 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes popInElastic {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(30px);
+  }
+  70% {
+    transform: scale(1.03) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-pop-elastic {
+  animation: popInElastic 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* 4. FLOATING 3D PRODUCT HIGHLIGHTS */
+.img-float-hover {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease;
+}
+
+.group:hover .img-float-hover {
+  transform: translateY(-10px) scale(1.14) rotate(-2deg);
+  filter: drop-shadow(0 15px 18px rgba(0, 0, 0, 0.2));
+}
+
